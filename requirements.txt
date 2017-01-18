@@ -1,7 +1,8 @@
-beautifulsoup4==4.5.1
-lyricfetcher==0.3
+beautifulsoup4==4.5.3
+bs4==0.0.1
+falcon==1.0.0
+hug==2.2.0
+lxml==3.7.2
+python-mimeparse==1.6.0
 requests==2.12.4
-requests-download==0.1.1
-requests-toolbelt==0.7.0
-Sanic==0.2.0
-gunicorn==19.6.0
+six==1.10.0

@@ -1,58 +1,52 @@
-# PyLyricFetcher 🔥🔥
+# LyricFool
 
-A Package and API to search lyrics from different web sources
+A command-line tool from finding lyrics.
 
-#### Note: All the lyrics are scraped from a public web pages of their respective domains, Please do not use this in Production as it is not allowed by the scraped website.Use this at your own discretion.
+## Installing
 
-# API
-The API is hosted at pylyricfetcher.herokuapp.com. It is written using the super fast
-[Sanic](https://github.com/channelcat/sanic) as the backend. (Please be patient if your
-first call is slow, as it uses Heroku free plan so the system takes time to start)
-
-## API calls
-An example call to the API can be as follows
-
-Usage : http://pylyricfetcher.herokuapp.com/api/lyricswikia/ArtistName/SongName
-
-Example: https://pylyricfetcher.herokuapp.com/api/lyricswikia/eminem/berzerk
-
-to retrive the lyrics of berzerk from lyrics wikia. Try it Out!
-
-There are 2 sources as of now
-+ lyricswikia
-+ MetroLyrics
-+ Genius
-
-The next arguments are The artist name and the song name!
-
-# [LyricFetcher](https://github.com/BharatKalluri/lyricfetcher/tree/master/lyricfetcher)
-
-[![PyPI version](https://badge.fury.io/py/lyricfetcher.svg)](https://badge.fury.io/py/lyricfetcher)
-
-A python Package to get the lyrics of a Song
-
-To install the package
-
-```bash
-pip install lyricfetcher
+```
+$ pip install lyricfool
 ```
 
-and import and use
+## Usage
+```
+lyricfool --help
+usage: lyricfool [-h] [-a ADAPTER] artist title
 
-```bash
->>> import lyricfetcher
->>> print(lyricfetcher.get_lyrics('azlyrics','linkin park','numb'))
+Gets lyrics from Genius, MetroLyrics, or LyricsWikia. Default: Genius. Add
+'metro' or 'wikia' to your command to change adapters.
+
+positional arguments:
+  artist                Basic text / string value
+  title                 Basic text / string value
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -a ADAPTER, --adapter ADAPTER
+                        Basic text / string value
 ```
 
-This prints out all the lyrics of linkin parks's awesome song
+```
+$ lyricfool "simon and garfunkel" "the boxer"
 
-## Options
-The get_lyrics takes 3 arguments
-+ Source
-  + azlyrics - Queries azlyrics for song lyrics
-  + metrolyrics - source of information will be metrolyrics.com
-  + genius - genius.com , you get it
-+ Artist - The second argument takes in the name of the artist seperated by spaces
-+ Song - The song name speprated by spaces
+[Produced by Roy Halee, Paul Simon, Art Garfunkel]
 
-And returns the lyrics in text form!
+[Verse 1]
+I am just a poor boy though my story's seldom told
+I have squandered my resistance for a pocketful of mumbles, such are promises
+All lies and jest, still a man hears what he wants to hear
+And disregards the rest, hmmmm
+
+[Verse 2]
+When I left my home and my family, I's no more than a boy
+In the company of strangers
+In the quiet of the railway station, runnin' scared, laying low
+Seeking out the poorer quarters, where the ragged people go
+Looking for the places only they would know
+
+... you get the point it prints lyrics.
+```
+
+## Sources
+
+By default it gets the lyrics from [Genius](https://genius.com). If you would prefer something else then adapters from MetroLyrics and LyricsWikia are available.

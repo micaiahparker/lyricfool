@@ -1,11 +1,21 @@
 from setuptools import setup
 
-setup(name='lyricfetcher',
-      version='0.3',
-      description='lyricfetcher',
-      url='http://github.com/bharatkalluri/lyricfetcher',
-      author='Bharat Kalluri',
-      author_email='bharatkalluri@protonmail.com',
+setup(name='lyricfool',
+      version='0.1',
+      description='lyricfool',
+      url='http://github.com/miciaiahparker/lyricfool',
+      author='Micaiah Parker',
+      author_email='me@micaiahparker.com',
       license='MIT',
-      packages=['lyricfetcher'],
-      zip_safe=False)
+      packages=['lyricfool'],
+      install_requires=[
+          'requests',
+          'hug',
+          'bs4',
+          'requests',
+          'beautifulsoup4',
+          'lxml'
+      ],
+      entry_points={
+          'console_scripts': ['lyricfool=lyricfool.app:main']
+      })

@@ -21,7 +21,7 @@ def get_lyric(artist: hug.types.text, title: hug.types.text, adapter: hug.types.
         return adapters[adapter].get_lyrics(artist, title)
     except exceptions.HTTPError as e:
         if '404' in str(e):
-            return "I'm sorry I couldn't find: {} by {}".format(artist, title)
+            return "I'm sorry I couldn't find: {} by {}".format(title, artist)
         return str(e)
 
 def main():
